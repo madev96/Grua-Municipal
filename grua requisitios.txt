@@ -1,0 +1,14 @@
+ Se prevé la toma de fotografías de los vehículos retirados.
+
+- Para el control de los servicios realizados, se prevé como elemento innovador
+la instalación de un Sistema Integral de Gestión (ERP), donde todos los
+movimientos quedan registrados dentro del software de gestión, haciendo
+posible realizar un seguimiento de los procesos, desde la entrada del
+vehículo, hasta su retirada, ya sea por el propietario o por ser considerado
+RSU.
+
+
+Se prevé, ajustándose en este sentido a los requerimientos municipales, el
+registro informático del día de salida de los vehículos y del importe cobrado,
+así como la posterior remisión de dicha información a los servicios
+municipales correspondientes.
