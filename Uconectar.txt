@@ -1,0 +1,7 @@
+// Configuración de la conexión a la base de datos
+$servername = "193.203.168.54"; // Cambia esto si es necesario
+$username = "u438457374_admin";
+$password = ",.Nitro,.77";
+$database = "u438457374_grua";
+
+conectado a heidisql y myworkbench (ambas conexiones se llaman GruaAlcala)

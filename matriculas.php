@@ -1,9 +1,11 @@
 <?php
+
+
 // Configuración de la conexión a la base de datos
-$servername = "localhost"; // Cambia esto si es necesario
-$username = "root";
-$password = "root";
-$database = "grua";
+$servername = "193.203.168.54"; // Cambia esto si es necesario
+$username = "u438457374_admin";
+$password = ",.Nitro,.77";
+$database = "u438457374_grua";
 
 // Verificar si se proporcionó una matrícula en la solicitud
 if (isset($_GET['matricula']) && !empty($_GET['matricula']) && strlen($_GET['matricula']) >= 3 && strlen($_GET['matricula']) <= 9) {

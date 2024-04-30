@@ -1,0 +1,1 @@
+. Se recomienda utilizar funciones de hash más seguras como bcrypt o Argon2 si estás trabajando con contraseñas reales en una aplicación.
