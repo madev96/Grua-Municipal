@@ -28,6 +28,8 @@ $matricula = strtoupper($_GET['matricula']);
 $sql = "SELECT * FROM vehiculos WHERE matricula = '$matricula'";
 $result = $conn->query($sql);
 
+
+
 // Verificar si se encontró algún resultado
 if ($result->num_rows > 0) {
 
@@ -70,7 +72,7 @@ if ($result->num_rows > 0) {
                         <p><strong>Para poder recuperarlo se requiere:</strong></p>
                         <ul class='list-unstyled'>
                             
-                            <li>- Aportar la <a id='documentacion' href='#documentacion'>documentación necesaria</a>.</li>
+                            <li>- Aportar la <a  href='index.html#documentacion'>documentación necesaria</a>.</li>
                             <br>
                             <li>- Abonar la tasa en el depósito.</li>
                             
@@ -195,15 +197,18 @@ function calcularPrecioTasa($result) {
             $precioTotal = 639 + (($diffDias - 29) * 30.86);
         }
     }
+    $horaRecogida = $fechaEntrada->format('H:i');
 
     // Generar el mensaje de euro y agregarlo al precio total
     $mensajeDespuesEuro = "";
     if ($tipoVehiculo == 'Moto') {
         if ($diffDias == 0 && $diffHoras <= 7) {
             // Dentro de las primeras 7 horas del primer día
-            $mensajeDespuesEuro = "<em>Precio calculado para el día " . date('d/m/Y \a \l\a\s H:i') . " horas.</em>
+            $mensajeDespuesEuro = "<em>Calculado para el día " . date('d/m/Y \a \l\a\s H:i') . " horas.</em>
                                         <br><br>
-                                        <strong>El precio actualmente está aumentando 0,51€ cada hora desde la fecha de recogida. (Máximo primer día: 87,12€)</strong>
+                                        <strong>El precio actualmente está aumentando 0,51€ cada hora desde la fecha de recogida: </strong> ". $fechaEntrada->format('d/m/Y') . " a las " . $horaRecogida."h 
+                                        <br><br>
+                                        (Máximo primer día: 87,12€)
                                         <br><br>
                                         A partir del segundo día aumentará 3,63€ cada 24 horas.
                                         <br><br> 
@@ -211,35 +216,37 @@ function calcularPrecioTasa($result) {
                                         <br><br>";
         } elseif ($diffDias == 0 && $diffHoras >= 8) {
             // Más de 8 horas del primer día
-            $mensajeDespuesEuro = "<em>Precio calculado para el día " . date('d/m/Y \a \l\a\s H:i') . " horas.</em>
+            $mensajeDespuesEuro = "<em>Calculado para el día " . date('d/m/Y \a \l\a\s H:i') . " horas.</em>
                                         <br><br>
                                         <strong>El precio hasta cumplir las primeras 24 horas no asciende más.</strong>
                                         <br><br> 
-                                        A partir del segundo día aumentará 3,63€ cada 24 horas desde la fecha de recogida.
+                                        A partir del segundo día aumentará 3,63€ cada 24 horas desde la fecha de recogida: ". $fechaEntrada->format('d/m/Y') . " a las " . $horaRecogida."h
                                         <br><br> 
                                         A partir de 30 días, aumentará 25,77€ cada 24 horas.
                                         <br><br>";
         } elseif ($diffDias <= 29) {
             // A partir del segundo día
-            $mensajeDespuesEuro = "<em>Precio calculado para el día " . date('d/m/Y \a \l\a\s H:i') . " horas.</em>
+            $mensajeDespuesEuro = "<em>Calculado para el día " . date('d/m/Y \a \l\a\s H:i') . " horas.</em>
                                         <br><br>
-                                        <strong>El precio está aumentando 3,63€ cada 24 horas desde la fecha de recogida.</strong>
+                                        <strong>El precio está aumentando 3,63€ cada 24 horas desde la fecha de recogida: </strong>  ". $fechaEntrada->format('d/m/Y') . " a las " . $horaRecogida."h
                                         <br><br> 
                                         A partir de 30 días aumentará 25,77€ cada 24 horas.
                                         <br><br>";
         } elseif ($diffDias >= 30) {
             // A partir del día 30
-            $mensajeDespuesEuro = "<strong>Precio calculado para el día " . date('d/m/Y \a \l\a\s H:i') . " horas.</strong>
+            $mensajeDespuesEuro = "<strong>Calculado para el día " . date('d/m/Y \a \l\a\s H:i') . " horas.</strong>
                                         <br><br>
-                                        El precio está aumentando 25,77€ cada 24 horas desde la fecha de recogida.
+                                        El precio está aumentando 25,77€ cada 24 horas desde la fecha de recogida: ". $fechaEntrada->format('d/m/Y') . " a las " . $horaRecogida."h
                                         <br><br>";
         }
     } else {
         if ($diffDias == 0 && $diffHoras <= 7) {
             // Dentro de las primeras 7 horas del primer día
-            $mensajeDespuesEuro = "<em>Precio calculado para el día " . date('d/m/Y \a \l\a\s H:i') . " horas.</em>
+            $mensajeDespuesEuro = "<em>Calculado para el día " . date('d/m/Y \a \l\a\s H:i') . " horas.</em>
                                         <br><br>
-                                        <strong>El precio actualmente está aumentando 1,63€ cada hora desde la fecha de recogida. (Máximo primer día: 196,75€)</strong>
+                                        <strong>El precio actualmente está aumentando 1,63€ cada hora desde la fecha de recogida: </strong> ". $fechaEntrada->format('d/m/Y') . " a las " . $horaRecogida."h
+                                        <br><br>
+                                        (Máximo primer día: 196,75€)
                                         <br><br>
                                         A partir del segundo día aumentará 15,25€ cada 24 horas.
                                         <br><br> 
@@ -247,33 +254,35 @@ function calcularPrecioTasa($result) {
                                         <br><br>";
         } elseif ($diffDias == 0 && $diffHoras >= 8) {
             // Más de 8 horas del primer día
-            $mensajeDespuesEuro = "<em>Precio calculado para el día " . date('d/m/Y \a \l\a\s H:i') . " horas.</em>
+            $mensajeDespuesEuro = "<em>Calculado para el día " . date('d/m/Y \a \l\a\s H:i') . " horas.</em>
                                         <br><br>
                                         <strong>El precio hasta cumplir las primeras 24 horas no asciende más.</strong>
                                         <br><br> 
-                                        A partir del segundo día aumentará 15,25€ cada 24 horas desde la fecha de recogida.
+                                        A partir del segundo día aumentará 15,25€ cada 24 horas desde la fecha de recogida: ". $fechaEntrada->format('d/m/Y') . " a las " . $horaRecogida."h
                                         <br><br> 
                                         A partir de 30 días, aumentará 30,86€ cada 24 horas.
                                         <br><br>";
         } elseif ($diffDias <= 29) {
             // A partir del segundo día
-            $mensajeDespuesEuro = "<em>Precio calculado para el día " . date('d/m/Y \a \l\a\s H:i') . " horas.</em>
+            $mensajeDespuesEuro = "<em>Calculado para el día " . date('d/m/Y \a \l\a\s H:i') . " horas.</em>
                                         <br><br>
-                                        <strong>El precio está aumentando 15,25€ cada 24 horas desde la fecha de recogida.</strong>
+                                        <strong>El precio está aumentando 15,25€ cada 24 horas desde la fecha de recogida: </strong>". $fechaEntrada->format('d/m/Y') . " a las " . $horaRecogida."h
                                         <br><br> 
                                         A partir de 30 días aumentará 30,86€ cada 24 horas.
                                         <br><br>";
-        } elseif ($diffDias >= 30) {
-            // A partir del día 30
-            $mensajeDespuesEuro = "<strong>Precio calculado para el día " . date('d/m/Y \a \l\a\s H:i') . " horas.</strong>
-                                        <br><br>
-                                        El precio está aumentando 30,86€ cada 24 horas desde la fecha de recogida.
-                                        <br><br>";
-        }
+                                    } elseif ($diffDias >= 30) {
+                                        // A partir del día 30
+                                        $mensajeDespuesEuro = "Calculado para el día " . date('d/m/Y \a \l\a\s H:i') . " horas.
+                                                                        <br><br>
+                                                                        <strong>El precio está aumentando 30,86€ cada 24 horas desde la fecha de recogida: </strong>". $fechaEntrada->format('d/m/Y') . " a las " . $horaRecogida."h
+                                                                        <br><br>";
+                                    }
+                                    
     }
-    // Formatear el precio total con el mensaje de euro
-    $precioTotalConMensaje = "<strong>" . number_format($precioTotal, 2, ',', '') . ' € </strong> <br><br>' . $mensajeDespuesEuro;
-    return $precioTotalConMensaje;
+    // Obtener la hora de recogida formateada
+    // Formatear el precio total con el mensaje de euro y la hora de recogida
+    $precioTotalConMensaje = "<strong>" . number_format($precioTotal, 2, ',', '.') . '€ </strong> <br><br>' . $mensajeDespuesEuro  ;
+    return "Precio actual:&nbsp;" . $precioTotalConMensaje;
     
 }
 
