@@ -162,8 +162,8 @@ function calcularPrecioTasa($result) {
     // Verificar si el tipo de vehículo es una moto
     if ($tipoVehiculo == 'Moto') {
         // Aplicar precios especiales para motos
-        $precioPorDia = 83.49; // Precio base por día para motos
-        $precioPorHoraPrimero = 0.51; // Precio por hora durante las primeras 7 horas del primer día para motos
+        $precioPorDia = 84.76; // Precio base por día para motos
+        $precioPorHoraPrimero = 1.03; // Precio por hora durante las primeras 7 horas del primer día para motos
         $precioPorHoraDespues = 3.63; // Precio por hora a partir del segundo día para motos
         $primerDiaCompleto = 87.12; // Precio para el primer día completo para motos
 
