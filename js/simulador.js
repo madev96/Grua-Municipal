@@ -110,7 +110,7 @@ switch (vehiculo) {
         break;
     case "moto":
         if (diffDias == 0 && diffHoras <= 7) {
-            precioBase = 84.76 + (diffHoras * 0.51);
+            precioBase = 84.76 + (diffHoras * 1.03);
         } else if (diffDias == 0 && diffHoras >= 7){
                 precioBase == 87.12;
         }else if (diffDias <= 29) {
