@@ -12,6 +12,8 @@
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-w7nRz2NTJBi9C3g0U2y4CpRZtakwbRd1az/0WlpB+afpOaxTNY8s0yX3FHEwLOx/" crossorigin="anonymous">
+
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -111,6 +113,7 @@
             <br><br> 
             <i class="fas fa-coins fa-3x text-primary mb-3"></i>              
             <h2 class="mb-4">Tasas</h2>
+            
             <div class="justify-content-center mt-4">
     
     
@@ -143,7 +146,7 @@
                             <div class="card bg-transparent text-center">
                                 <div class="card-body">
                                     <button class="btn btn-outline-white btn-sm mb-2" onclick="toggleMensaje()">
-                                        <i class="fas fa-calculator fa-2x mb-1 text-success"></i>
+                                        <i class="fas fa-calculator fa-2x mb-1 text-primary"></i>
 
                                         <br><br>
                                         <h5>Simulador de tasas</h5>
@@ -159,10 +162,10 @@
                                         <div class="col-md-6">
                                             <br>
                                             <form id="formCalcularTasas">
-                                                <h4 style="text-align: justify; text-align-last: left;">1. Introduzca las fechas de entrada y salida del depósito.</h4>
+                                                <h4 style="text-align: left;"><span class="icon text-primary" style=" font-weight: bold;">1- </span> Introduzca las fechas de entrada y salida del depósito.</h4>
                                                 <br><br>
                                                 <div class="mb-3 row align-items-center justify-content-center">
-                                                    <label for="fechaEntrada" class="form-label col-md-3">
+                                                    <label for="fechaEntrada" class="form-label col-md-6 mb-3">
                                                         <i class="far fa-calendar-alt fa-2x text-primary"></i>&nbsp Entrada
                                                     </label>
                                                     <div class="col-md-8 text-center">
@@ -173,7 +176,7 @@
                                                 <br>
                 
                                                 <div class="mb-3 row align-items-center justify-content-center">
-                                                    <label for="fechaSalida" class="form-label col-md-3">
+                                                    <label for="fechaSalida" class="form-label col-md-6 mb-3">
                                                         <i class="far fa-calendar-alt fa-2x text-primary"></i>&nbsp Salida
                                                     </label>
                                                     <div class="col-md-8 text-center">
@@ -181,21 +184,21 @@
                                                     </div>
                                                 </div>
                 
-                                                <br><br><br><br>
-                                                <h4 style="text-align: justify; text-align-last: left;">2. Seleccione el tipo de vehículo.</h4>
-                
+                                                <br><br><br>
+                                                <h4 style="text-align: left; "><span class="icon text-primary" style="font-weight: bold;">2- </span> Seleccione el tipo de vehículo.</h4>
+                                                <br>
                                                 <div class="mb-3 d-grid gap-2 text-center">
                                                     <div class="btn-group" role="group" aria-label="Opciones de vehículo">
                                                         <input type="radio" class="btn-check" name="opciones" id="cocheRadio" value="coche" autocomplete="off">
                                                         <label class="btn btn-outline-primary" for="cocheRadio">
-                                                            <i class="fas fa-car fa-2x"></i><br><br> Coche
+                                                            <i class="fas fa-car fa-2x"></i><br><br><span style="color: white;">Coche</span>
                                                         </label>
                                                         <input type="radio" class="btn-check" name="opciones" id="motoRadio" value="moto" autocomplete="off">
                                                         <label class="btn btn-outline-primary" for="motoRadio">
-                                                            <i class="fas fa-motorcycle fa-2x"></i><br><br> Moto
+                                                            <i class="fas fa-motorcycle fa-2x"></i><br><br><span style="color: white;">Moto</span>
                                                         </label>
                                                     </div>
-                                                    <br>
+                                                    <br><br>
                                                     <button class="btn btn-lg btn-custom mx-auto" type="button" style="max-width: 320px;" onclick="calcular()">
                                                         <i class="fas fa-calculator fa-2x me-2"></i>
                                                         <span class="font-weight-bold" style="font-size: 18px;">Calcular tasa</span>
@@ -298,7 +301,7 @@
                     <div class="col-md-6">
                         <div class="card mb-3">
                             <div class="card-header bg-primary text-white">
-                                <h5 class="mb-0">Inmovilizado</h5>
+                                <h5 class="mb-0">Inmovilizado*</h5>
                             </div>
                             <div class="card-body">
                                 <!-- Primer botón con desplegable -->
@@ -368,27 +371,24 @@
             </div>
     
             <div class="accordion-body">
-                <p class="text-white"  >
+                <p class="text-white">
                     <details>
-                        <summary id="inmovilizado" class="text-white " style="list-style-type: none;">¿Qué es un vehículo inmovilizado?</summary>
+                        <summary id="inmovilizado"  style="list-style-type: none;">*¿Qué es un vehículo inmovilizado?</summary>
                         <br><br>
-                        <div class=" text-white" style="margin-top: 10px;">
-                            <p style="margin-bottom: 10px;  color: #ffffff;">Es una medida cautelar que implica la detención provisional del vehículo por parte de la Policía Local.</p>
-                            <br>
-                            <p style="margin-bottom: 10px; color: #ffffff;">El vehículo no puede ser utilizado hasta que se resuelva la situación que lo motivó.</p>
+
+                              
+                              
+                            <p style="margin-bottom: 10px; color: #c8c6c6; text-align: left;">Es una medida cautelar que <strong style="color: white;">implica la detención provisional del vehículo</strong> por parte de la Policía Local, lo que impide su uso hasta que se resuelva la situación que lo motivó.</p>
                             <br><br>
-                            <p style="margin-bottom: 10px;font-weight: bold; color: #ffffff;">Causas principales:</p>
-                            <ul style="margin-bottom: 10px; color: #ffffff; list-style:none;"  >
-                                <li>- Carecer de seguro obligatorio.</li>
-                                <li>- Suponer un riesgo grave para la circulación.</li>
-                                <li>- Consumo de alcohol y estupefacientes.</li>
-                                <li>- Exceso del límite de peso.</li>
-                                <li>- Falta de documentación.</li>
-                            </ul>
+                            <p style="margin-bottom: 10px; color: #c8c6c6; text-align: left;">
+                                <strong>Causas más frecuentes:</strong> Carecer de seguro obligatorio, consumo de alcohol y estupefacientes, falta de documentación y suponer un riesgo grave para la circulación entre otros.
+                            </p>
                         </div>
                     </details>
                 </p>
             </div>
+            
+            
             
         </div>
     </section>
@@ -420,8 +420,11 @@
                         </div>
                         <div id="collapseSimulador" class="accordion-collapse collapse" aria-labelledby="headingSimulador" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <p>Si un vehículo obstaculiza gravemente la circulación o la seguridad de las personas, debe llamar a la Policía Local de Alcalá de Henares para solicitar el servicio de grúa con la mayor brevedad posible.</p>
+                                <br>
+                                <p style="text-align: left;">Si un vehículo obstaculiza gravemente la circulación o la seguridad de otros vehículo de o los ciudadanos, <strong>debe llamar a la Policía Local de Alcalá de Henares</strong> para solicitar el servicio de grúa con la mayor brevedad posible.</p>
+                                <br>
                                 <button class="btn btn-primary"><a href="tel:918306814" class="text-white" style="text-decoration: none;">Llamar a Policía Local</a></button>
+                                <br><br>
                             </div>
                         </div>
                     </div>
@@ -435,10 +438,11 @@
                         <div id="collapseResumenTasas" class="accordion-collapse collapse" aria-labelledby="headingResumenTasas" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <br>
-                                <p>La baja definitiva de un vehículo implica retirarlo de la circulación y proceder a su destrucción, lo que significa que no se puede revertir esta situación.</p>
-                                <p>Este trámite puede realizarse de forma presencial o telemática.</p>
-                                <p>Puedes obtener más información sobre el proceso de baja definitiva en la página web de la Dirección General de Tráfico (DGT):</p>
-                                <p><a href="https://sede.dgt.gob.es/es/vehiculos/altas-bajas-y-rehabilitacion/baja-definitiva-ordinaria/" target="_blank" rel="noopener noreferrer">Baja definitiva de vehículos en la DGT</a></p>
+                                <p style="text-align: left;">La baja definitiva de un vehículo <strong>implica retirarlo de la circulación y proceder a su destrucción</strong>, lo que significa que no se puede revertir esta situación.</p>
+                                <p style="text-align: left;">Este trámite puede realizarse de forma presencial o telemática.</p>
+                                <p style="text-align: left;">Puedes obtener más información sobre el proceso de baja definitiva en la página web de la Dirección General de Tráfico (DGT):</p>
+                                <br>
+                                <p ><a href="https://sede.dgt.gob.es/es/vehiculos/altas-bajas-y-rehabilitacion/baja-definitiva-ordinaria/" target="_blank" rel="noopener noreferrer">Baja definitiva de vehículos en la DGT</a></p>
                             </div>
                         </div>
                     </div>
@@ -454,8 +458,12 @@
                                 <br>
                                 <p>La retirada de un vehículo de la vía pública por parte de la grúa municipal conlleva el abono de:</p>
                                 <br>
-                                <p><strong>1. Tasa de retirada y depósito de vehículos correspondiente,</strong> dependiendo del tipo de vehículo y del tiempo en el depósito. <br><em>(Necesario abonar para la recogida del vehículo)<br> <a href="#tasas">Ver tasas</a></em></p>
-                                <p><strong>2. Denuncia del vehículo por Policía Local, </strong> dependiendo del motivo y del número de denuncias. <br><em>(No es necesario para recoger el vehículo) <br> <a href="https://tpvinstitucional.bbva.com/TLBB/tlbb/PagoInstController?XWtxtS020tpviFuc=350159398 " target="_blank">Realizar pago online</a></em></p>
+                                <p style="text-align: left;"><strong>1. Tasa de retirada y depósito de vehículos correspondiente</strong> al tipo de vehículo y al tiempo en el depósito. <em>(Necesario abonar en el depósito para la recogida del vehículo)<br> </em></p>
+                                <a href="#tasas">Ver tasas</a>
+                                <br><br>
+                                <p style="text-align: left;"><strong>2. Denuncia del vehículo por Policía Local, </strong> dependiendo de la naturaleza de esta. <em>(No es necesario abonar para recoger el vehículo) <br> </em></p>
+                                <a href="https://tpvinstitucional.bbva.com/TLBB/tlbb/PagoInstController?XWtxtS020tpviFuc=350159398 " target="_blank">Realizar pago online</a>
+                                <br><br>
                             </div>
                         </div>
                     </div>
